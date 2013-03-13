@@ -21,6 +21,7 @@ describe User do
   it { should validate_presence_of(:uid) }
 
   it { should have_many(:posts) }
+  it { should have_many(:comments) }
 
 
   describe '.from_omniauth' do

@@ -2,6 +2,7 @@ require 'digest/md5'
 
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :comments
 
   validates :uid,   :uniqueness => { :scope => :provider }
   validates :email, :uniqueness => true
