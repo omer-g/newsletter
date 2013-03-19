@@ -14,3 +14,6 @@
         = link_to post.title, post_path(post)
       .content
         = sanitize post.body
+        = link_to "New Comment", new_comment_path(post_id: post.id), id: "new_comment", remote: true
+        - post.comments.each do |comment|
+          = render :partial => 'comments/comment', :locals => {:comment => comment}

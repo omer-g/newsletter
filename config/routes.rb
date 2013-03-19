@@ -5,6 +5,8 @@ Newsletter::Application.routes.draw do
 
   resources :users, :only => [:index, :show]
 
+  resources :comments, :only => [:new, :create]
+
   get 'auth/:provider/callback', :to => 'sessions#create'
   get 'login', :as => :login,    :to => 'sessions#new'
 
