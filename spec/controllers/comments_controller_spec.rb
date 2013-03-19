@@ -6,6 +6,16 @@ describe CommentsController do
     controller.stub(:authenticate)
   end
 
+  describe "GET 'index'" do
+    it "should find all the comments of the post parameter" do
+      post = FactoryGirl.create(:post)
+      comments_mock = [mock("comment")]
+      Comment.should_receive(:find_all_by_post_id).with(post.id).and_return(comments_mock)
+      get :index, post_id: post.id, :format => :js
+      assigns(:comments).should eq(comments_mock)
+    end
+  end
+
   describe "GET 'new'" do
     it "should respond to :js format" do
       get :new, :format => :js

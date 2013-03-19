@@ -1,1 +1,1 @@
-$('#new_comment').hide().after('<%= j render("form") %>');
+$('#new_comment_<%= params[:post_id] %>').hide().after('<%= j render("form") %>');
