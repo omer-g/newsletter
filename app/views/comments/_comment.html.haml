@@ -4,7 +4,7 @@
       = link_to user_path(comment.user), :class => '', :title => comment.user.full_name do
         = image_tag comment.user.gravatar_image_url, :class => 'img-polaroid media-object'
 
-      %p= comment.created_at.to_date.to_formatted_s(:rfc822)
+      %p= comment.created_at.to_formatted_s(:short)
 
   .span9.offset1.right-column
     .row

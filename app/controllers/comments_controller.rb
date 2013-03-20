@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_filter :authenticate
 
   def index
-    @comments = Comment.find_all_by_post_id(params[:post_id])
+    @comments = Comment.find_all_by_post_id(params[:post_id], :order => 'created_at DESC',)
   end
 
   def new
