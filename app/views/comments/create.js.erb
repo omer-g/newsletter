@@ -1,2 +1,2 @@
-$('.new_comment').hide();
+$('.new_comment').remove();
 $('#new_comment_<%= @comment.post_id %>').show().after("<%= j render :partial => 'comments/comment', :locals => {:comment => @comment} %>");
